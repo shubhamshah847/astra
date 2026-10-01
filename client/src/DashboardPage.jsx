@@ -7,6 +7,7 @@ import ArticleCard from './components/ArticleCard.jsx';
 import AddArticleForm from './components/AddArticleForm.jsx';
 import BriefBox from './components/BriefBox.jsx';
 import StatsBar from './components/StatsBar.jsx';
+import SignalPulse from './components/SignalPulse.jsx';
 
 export default function DashboardPage() {
   const { user, logout } = useAuth();
@@ -68,6 +69,7 @@ export default function DashboardPage() {
         </div>
       </header>
 
+      <SignalPulse articles={articles} stats={stats} />
       <StatsBar stats={stats} />
       <BriefBox />
       <AddArticleForm onAdded={refreshAll} />

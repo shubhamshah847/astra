@@ -11,7 +11,7 @@ export const CATEGORIES = [
   'Defence Technology',
 ];
 
-const PROVIDER = (process.env.LLM_PROVIDER || 'gemini').toLowerCase();
+const PROVIDER = (process.env.LLM_PROVIDER || 'nvidia').toLowerCase();
 
 // Make sure a setting exists in .env, or show a clear error
 function needEnv(name) {
@@ -31,7 +31,7 @@ async function postJson(url, headers, body) {
   });
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
-    const message = (data.error && (data.error.message || data.error)) || 'AI request failed';
+    const message = (data.error && (data.error.message || data.error)) || data.message || data.detail || data.title || `AI request failed (${res.status})`;
     const error = new Error(typeof message === 'string' ? message : JSON.stringify(message));
     error.status = res.status;
     throw error;
@@ -40,6 +40,26 @@ async function postJson(url, headers, body) {
 }
 
 // ---------- One small function for each provider ----------
+
+// NVIDIA NIM (OpenAI-compatible chat completions API)
+async function askNvidia(systemPrompt, userText, maxTokens) {
+  const key = needEnv('NVIDIA_API_KEY');
+  const model = process.env.NVIDIA_MODEL || process.env.LLM_MODEL || 'nvidia/nemotron-3-super-120b-a12b';
+  const baseUrl = process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1';
+  const data = await postJson(
+    `${baseUrl.replace(/\/$/, '')}/chat/completions`,
+    { Authorization: `Bearer ${key}` },
+    {
+      model,
+      max_tokens: maxTokens,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userText },
+      ],
+    }
+  );
+  return (data.choices && data.choices[0] && data.choices[0].message?.content) || '';
+}
 
 // Google Gemini
 async function askGemini(systemPrompt, userText, maxTokens) {
@@ -109,10 +129,11 @@ async function askOpenAICompatible(systemPrompt, userText, maxTokens) {
 
 // Pick the right provider
 async function askAI(systemPrompt, userText, maxTokens) {
+  if (PROVIDER === 'nvidia') return askNvidia(systemPrompt, userText, maxTokens);
   if (PROVIDER === 'gemini') return askGemini(systemPrompt, userText, maxTokens);
   if (PROVIDER === 'anthropic') return askClaude(systemPrompt, userText, maxTokens);
   if (PROVIDER === 'openai') return askOpenAICompatible(systemPrompt, userText, maxTokens);
-  throw new Error('LLM_PROVIDER must be gemini, anthropic or openai');
+  throw new Error('LLM_PROVIDER must be nvidia, gemini, anthropic or openai');
 }
 
 // ---------- The features (same for every provider) ----------

@@ -39,7 +39,7 @@ Node.js + Express backend
   |
   +-- Ingestion: form or seed script --> validate --> duplicate check (hash)
   |
-  +-- AI processing: Claude API --> category, summary, keywords, entities
+  +-- AI processing: NVIDIA NIM API --> category, summary, keywords, entities
   |
 MongoDB (articles + text search index)
   |
@@ -51,7 +51,7 @@ React frontend --> USER
 
 ## Setup (local)
 
-You need: Node.js 18+, MongoDB, Redis, Gmail OAuth credentials, and an Anthropic API key.
+You need: Node.js 18+, MongoDB, Redis, Gmail OAuth credentials, and an NVIDIA API key.
 
 1. Install everything:
    ```
@@ -60,7 +60,8 @@ You need: Node.js 18+, MongoDB, Redis, Gmail OAuth credentials, and an Anthropic
 2. Create `server/.env`:
    ```
   MONGO_URI=mongodb://127.0.0.1:27017/astra-sentinel
-  ANTHROPIC_API_KEY=your-anthropic-api-key
+  LLM_PROVIDER=nvidia
+  NVIDIA_API_KEY=your-nvidia-api-key
   JWT_WEB_TOKEN=your-long-random-secret
   REDIS_URI=redis://127.0.0.1:6379
   EMAIL_USER=your-sending-gmail-address
@@ -70,7 +71,7 @@ You need: Node.js 18+, MongoDB, Redis, Gmail OAuth credentials, and an Anthropic
    ```
   Use a long random value for `JWT_WEB_TOKEN`; set it before deploying. Keep all credentials private.
    - MongoDB: local (`mongodb://127.0.0.1:27017/astra-sentinel`) or a free MongoDB Atlas cluster.
-   - API key: https://console.anthropic.com
+  - Create an NVIDIA API key through NVIDIA Build (https://build.nvidia.com/). The default model is `nvidia/nemotron-3-super-120b-a12b`; override it with `NVIDIA_MODEL` if needed.
 3. Start Redis (Docker Desktop must be running):
    ```
    docker compose -f server/docker-compose.yml up -d
@@ -97,7 +98,7 @@ You need: Node.js 18+, MongoDB, Redis, Gmail OAuth credentials, and an Anthropic
 One service runs both the API and the React app.
 - Build command: `npm run setup && npm run build`
 - Start command: `npm start`
-- Environment variables: `MONGO_URI` (use MongoDB Atlas), `ANTHROPIC_API_KEY`, `JWT_WEB_TOKEN`, `REDIS_URI`, `EMAIL_USER`, `CLIENT_ID`, `CLIENT_SECRET`, and `REFRESH_TOKEN`
+- Environment variables: `MONGO_URI` (use MongoDB Atlas), `LLM_PROVIDER=nvidia`, `NVIDIA_API_KEY`, `JWT_WEB_TOKEN`, `REDIS_URI`, `EMAIL_USER`, `CLIENT_ID`, `CLIENT_SECRET`, and `REFRESH_TOKEN`
 - Load the sample data into the Atlas database once, by running `npm run seed` on your computer with the Atlas `MONGO_URI` in `server/.env`.
 
 ## Project structure
