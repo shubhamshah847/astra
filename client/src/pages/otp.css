@@ -1,0 +1,472 @@
+
+/* ================================
+   OTP PAGE
+================================ */
+
+.otp-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px 20px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 107, 53, 0.15),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(255, 193, 7, 0.12),
+      transparent 35%
+    ),
+    #fffaf7;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.otp-card {
+  width: 100%;
+  max-width: 440px;
+
+  padding: 45px 40px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.10),
+    0 8px 25px rgba(0, 0, 0, 0.05);
+
+  text-align: center;
+
+  animation: cardAppear 0.5s ease;
+}
+
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ================================
+   ICON
+================================ */
+
+.otp-icon {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #ff6b35,
+    #ff8a5c
+  );
+
+  font-size: 30px;
+
+  box-shadow:
+    0 10px 25px rgba(255, 107, 53, 0.25);
+}
+
+
+/* ================================
+   TITLE
+================================ */
+
+.otp-card h1 {
+  margin: 0;
+
+  font-size: 30px;
+  font-weight: 800;
+
+  color: #171717;
+}
+
+
+.otp-description {
+  margin: 12px auto 30px;
+
+  max-width: 330px;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* ================================
+   LABEL
+================================ */
+
+.otp-card label {
+  display: block;
+
+  text-align: left;
+
+  margin-bottom: 9px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #333;
+}
+
+
+/* ================================
+   OTP INPUT
+================================ */
+
+.otp-input {
+  width: 100%;
+
+  height: 62px;
+
+  border: 2px solid #eeeeee;
+
+  border-radius: 15px;
+
+  outline: none;
+
+  background: #fafafa;
+
+  text-align: center;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  letter-spacing: 14px;
+
+  padding-left: 14px;
+
+  color: #222;
+
+  transition: 0.25s ease;
+
+  box-sizing: border-box;
+}
+
+
+.otp-input:focus {
+  border-color: #ff6b35;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(255, 107, 53, 0.10);
+}
+
+
+.otp-input::placeholder {
+  color: #cfcfcf;
+  letter-spacing: 12px;
+}
+
+
+/* ================================
+   OTP DOTS
+================================ */
+
+.otp-dots {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 14px;
+}
+
+
+.otp-dots span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #ddd;
+
+  transition: 0.2s ease;
+}
+
+
+.otp-dots span.active {
+  width: 22px;
+
+  border-radius: 10px;
+
+  background: #ff6b35;
+}
+
+
+/* ================================
+   TIMER
+================================ */
+
+.timer {
+  margin: 22px 0;
+
+  font-size: 13px;
+
+  color: #777;
+}
+
+
+.timer strong {
+  color: #ff6b35;
+
+  font-size: 14px;
+}
+
+
+.expired {
+  color: #e53935;
+
+  font-weight: 700;
+}
+
+
+/* ================================
+   ERROR
+================================ */
+
+.otp-error {
+  margin: 12px 0;
+
+  padding: 11px;
+
+  border-radius: 10px;
+
+  background: #fff0f0;
+
+  color: #d32f2f;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* ================================
+   SUCCESS
+================================ */
+
+.otp-success {
+  margin: 12px 0;
+
+  padding: 11px;
+
+  border-radius: 10px;
+
+  background: #effaf3;
+
+  color: #218838;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* ================================
+   VERIFY BUTTON
+================================ */
+
+.verify-btn {
+  width: 100%;
+
+  height: 54px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #ff6b35,
+    #ff824f
+  );
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+
+  box-shadow:
+    0 10px 20px rgba(255, 107, 53, 0.20);
+}
+
+
+.verify-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 28px rgba(255, 107, 53, 0.28);
+}
+
+
+.verify-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+
+.verify-btn:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* ================================
+   RESEND
+================================ */
+
+.resend-section {
+  margin-top: 25px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+
+.resend-section p {
+  margin: 0 0 8px;
+
+  color: #888;
+
+  font-size: 13px;
+}
+
+
+.resend-btn {
+  border: none;
+
+  background: transparent;
+
+  color: #ff6b35;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.resend-btn:hover:not(:disabled) {
+  color: #e95422;
+
+  text-decoration: underline;
+}
+
+
+.resend-btn:disabled {
+  color: #aaa;
+
+  cursor: not-allowed;
+
+  text-decoration: none;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.otp-footer {
+  margin-top: 30px;
+
+  color: #aaa;
+
+  font-size: 11px;
+}
+
+
+.otp-footer span {
+  color: #ff6b35;
+
+  font-weight: 800;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 500px) {
+
+  .otp-page {
+    padding: 20px 15px;
+  }
+
+  .otp-card {
+    padding: 35px 22px;
+
+    border-radius: 22px;
+  }
+
+  .otp-card h1 {
+    font-size: 25px;
+  }
+
+  .otp-input {
+    height: 58px;
+
+    font-size: 25px;
+
+    letter-spacing: 10px;
+  }
+
+  .otp-input::placeholder {
+    letter-spacing: 9px;
+  }
+
+  .otp-icon {
+    width: 60px;
+    height: 60px;
+
+    font-size: 25px;
+  }
+}
+

@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Indigenous stealth UAV programme announced",
+    "body": "A national defence research agency announced a new programme to build an indigenous stealth unmanned aerial vehicle. The drone is planned to fly long missions with low radar visibility and an autonomous navigation system. Officials said the first prototype flight is expected within three years and that private aerospace firms will supply key parts.",
+    "sourceUrl": "https://example.com/sample-1",
+    "publishedAt": "2026-09-01"
+  },
+  {
+    "title": "Navy commissions new guided-missile destroyer",
+    "body": "The navy commissioned a new guided-missile destroyer equipped with an advanced radar and vertical launch cells. The ship was built at a domestic shipyard and carries a helicopter for anti-submarine missions. Senior officers said the vessel will join the western fleet and strengthen maritime patrols in the region.",
+    "sourceUrl": "https://example.com/sample-2",
+    "publishedAt": "2026-09-03"
+  },
+  {
+    "title": "Army tests upgraded main battle tank in desert trials",
+    "body": "The army completed desert trials of an upgraded main battle tank with improved armour, a new fire-control system and better engine cooling. Engineers reported stable performance in extreme heat during long-distance movement tests. The upgrade programme aims to extend the service life of the existing tank fleet.",
+    "sourceUrl": "https://example.com/sample-3",
+    "publishedAt": "2026-09-05"
+  },
+  {
+    "title": "Ransomware group targets defence contractor network",
+    "body": "Security researchers reported that a ransomware group attacked the network of a defence contractor and leaked internal documents. The attackers entered through an unpatched remote access server. The company said critical systems were isolated quickly and that an investigation with national cyber authorities is under way.",
+    "sourceUrl": "https://example.com/sample-4",
+    "publishedAt": "2026-09-07"
+  },
+  {
+    "title": "Space agency launches military communication satellite",
+    "body": "A military communication satellite was launched into geostationary orbit by the national space agency. The satellite will provide secure voice and data links for the armed forces across remote border areas. Mission controllers confirmed that the solar panels opened correctly and the satellite is now in its final position.",
+    "sourceUrl": "https://example.com/sample-5",
+    "publishedAt": "2026-09-09"
+  },
+  {
+    "title": "Defence lab unveils AI-powered drone swarm coordination",
+    "body": "A defence laboratory showed a swarm of small autonomous drones that share information and divide search tasks without a human pilot for each drone. The software uses machine learning to avoid collisions and to adapt when one drone is lost. Researchers said the system is meant for search and rescue and border surveillance.",
+    "sourceUrl": "https://example.com/sample-6",
+    "publishedAt": "2026-09-11"
+  },
+  {
+    "title": "New lightweight body armour passes ballistic tests",
+    "body": "A materials research team reported that a new lightweight body armour made from layered ceramic and polymer fibres passed ballistic tests. The armour is about thirty percent lighter than the current design while stopping the same rounds. The team plans field trials with infantry units next year.",
+    "sourceUrl": "https://example.com/sample-7",
+    "publishedAt": "2026-09-13"
+  },
+  {
+    "title": "Fighter jet squadron receives advanced electronic warfare pods",
+    "body": "An air force fighter squadron received new electronic warfare pods that can jam enemy radar and protect aircraft from incoming missiles. The pods were developed by a domestic electronics company and tested on several fighter jets. Pilots said the system improves survival chances during deep strike missions.",
+    "sourceUrl": "https://example.com/sample-8",
+    "publishedAt": "2026-09-15"
+  },
+  {
+    "title": "Submarine tests new air-independent propulsion system",
+    "body": "A conventional submarine completed sea trials of a new air-independent propulsion system that lets it stay underwater for weeks without surfacing. The navy said the technology makes the submarine much quieter and harder to detect. More submarines in the fleet are expected to receive the upgrade during refits.",
+    "sourceUrl": "https://example.com/sample-9",
+    "publishedAt": "2026-09-17"
+  },
+  {
+    "title": "Military forms task force to secure AI systems against attacks",
+    "body": "The defence ministry created a task force to protect military artificial intelligence systems from data poisoning and adversarial attacks. The group will write security standards for any AI software used in surveillance and decision support. Experts said the move shows growing concern about the safety of autonomous and learning systems.",
+    "sourceUrl": "https://example.com/sample-10",
+    "publishedAt": "2026-09-19"
+  }
+]
